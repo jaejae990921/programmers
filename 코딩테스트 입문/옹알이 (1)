@@ -1,0 +1,21 @@
+function solution(babbling) {
+    let cnt = 0;
+    let ong = ['aya', 'ye', 'woo', 'ma'];
+    
+    for (let i = 0; i < babbling.length; i++) {
+        let say = babbling[i];
+        for (let j = 0; j < ong.length; j++) {
+            if (say.includes(ong[j])) {
+                say = say.replace(ong[j], " ");
+            }
+        }
+        
+        say = say.replaceAll(" ", "");
+        
+        if(say.length == 0) {
+            cnt++;
+        }
+    }
+    
+    return cnt;
+}
